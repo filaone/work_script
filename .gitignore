@@ -1,0 +1,22 @@
+*.class
+
+# Package Files #
+target/
+.classpath
+.project
+.settings
+test-output/
+
+# Project Files #
+*.idea/
+*.iml
+
+# tmp files
+*~
+
+# hidden file/directory
+.*
+
+error.log
+!.gitignore
+
