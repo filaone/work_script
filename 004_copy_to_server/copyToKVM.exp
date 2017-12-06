@@ -1,0 +1,67 @@
+#!/usr/bin/expect -f
+
+# 命令执行环境：本地开发Mac主机上，自动上传searcher.jar到服务器，并运行，涉及个人隐私，密码必须自行输入
+# 使用说明 expect copyToKVM.exp [跳板机用户名] [跳板机密码] [Mac机器用户名] [Mac用户密码]
+# expect copyToKVM.expect wangshuguang jump_passwd cnetwork mac_passwd
+# 原理为通过跳板机跳跃到kvm机器上对本mac机器进行scp命令
+
+set mode "Test"
+set timeout 5
+
+
+set artifactId   "cache-layer-statistic"
+set version      "1.0-SNAPSHOT"
+set kvm_project_path "/home/services/wangshuguang/cachelayer/"
+
+
+#设置本地jar包名称，无需修改
+set jar_name "${artifactId}-${version}-jar-with-dependencies.jar"
+set current_dir [exec sh -c {pwd}]
+set jar_path ${current_dir}"/../target/"${jar_name}
+set current_time [exec sh -c {date "+%Y-%m-%d-%H-%M"}]
+set target_jar $current_time"-"${mode}"-${artifactId}.jar"
+
+#自动获取Mac开发机参数，无需修改
+set local_ip [exec sh -c {ifconfig -a | grep inet | grep -v 127.0.0.1 | grep -v inet6 | awk '{print $2}' | tr -d "addrs"}]
+set local_user [lindex $argv 2]
+set local_passwd [lindex $argv 3]
+
+#自动获取跳板机参数，无需修改
+set jump_name [lindex $argv 0]
+set jump_passwd [lindex $argv 1]
+set jump_server "relay.yidian.com"
+
+#配置测试机相关参数，需要注意的有kvm_project_path必须配置为个人工程项目
+set kvm_name "services"
+set kvm_server "10.xxx.xx.xx"
+set kvm_passwd "kvm_password"
+set kvm_bak_name "${artifactId}.jar.bak.$current_time"
+set kvm_origin_name "${artifactId}.jar"
+spawn ssh -l services wangshuguang@relay.yidian.com
+expect {
+    "*yes/no" {
+        send "yes\r"
+        exp_continue
+    }
+    "password: " {
+        send "${jump_passwd}\r"
+     }
+}
+expect "$ "
+send "ssh ${kvm_name}@${kvm_server}\r"
+expect "password: "
+send "${kvm_passwd}\r"
+expect "$ "
+send "mv ${kvm_project_path}${kvm_origin_name} $kvm_project_path${kvm_bak_name}\r"
+send "scp ${local_user}@${local_ip}:${jar_path} ${kvm_project_path}${artifactId}.jar\r"
+expect {
+    "*yes/no" {
+        send "yes\r"
+        exp_continue
+    }
+    "Password:" {
+        send "${local_passwd}\r"
+     }
+}
+#send "sh ${kvm_project_path}restart.sh"
+interact
