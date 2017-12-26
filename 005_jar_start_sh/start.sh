@@ -9,8 +9,7 @@ JAVA_OPTS="$JAVA_OPTS -XX:+PrintGCDateStamps"
 JAVA_OPTS="$JAVA_OPTS -XX:+PrintClassHistogram"
 JAVA_OPTS="$JAVA_OPTS -XX:+PrintTenuringDistribution"
 JAVA_OPTS="$JAVA_OPTS -XX:+PrintGCApplicationStoppedTime"
-
-
+JAVA_OPTS="$JAVA_OPTS -XX:+HeapDumpOnOutOfMemoryError"
 
 
 nohup /home/services/jdk1.8.0_45/bin/java -agentlib:jdwp=transport=dt_socket,\
