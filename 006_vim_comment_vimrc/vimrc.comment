@@ -1,0 +1,85 @@
+"SET Comment START
+"增加文件类型时，请使用段落注释，并确保信息字段部分统一使用#号(DataInsert 使用#,避免对已有代码造成影响)
+"增加文件类型时确保修改SetComment函数以及 DataInsert函数中的文件判断部分
+autocmd BufNewFile *.php,*.c,*.cpp,*.sh,*.py,*.java exec ":call SetComment()" |normal 10Go
+func SetComment()
+        "如果文件类型为.c或者.cpp文件
+        if (expand("%:e") == 'c' || expand("%:e") == 'cpp')
+		call setline(1, "#include<iostream>")
+		call setline(2, "using namespace std;")
+		call setline(3, "")
+                call setline(4, "/************************************************")  
+		call setline(5, '#      Filename: '.expand("%"))
+                call setline(6, "#        Author: wangshuguang - buaa_wsg@163.com")  
+                call setline(7, "#   Description: ---")  
+                call setline(8, "#       Created: ".strftime("%Y-%m-%d %H:%M:%S"))
+		call setline(9, "# Last Modified: ".strftime("%Y-%m-%d %H:%M:%S"))  
+                call setline(10, "************************************************/")  
+                call setline(11, "")  
+        "如果文件类型为.sh文件
+        elseif expand("%:e") == 'sh'  
+                call setline(1, "\#!/bin/bash")
+		call setline(2, "")
+                call setline(3, "#************************************************")  
+		call setline(4, '#      Filename: '.expand("%"))
+                call setline(5, "#        Author: wangshuguang - buaa_wsg@163.com")  
+                call setline(6, "#   Description: ---")  
+                call setline(7, "#       Created: ".strftime("%Y-%m-%d %H:%M:%S"))
+		call setline(8, "# Last Modified: ".strftime("%Y-%m-%d %H:%M:%S"))  
+                call setline(9, "#************************************************")  
+                call setline(10, "")  
+        "如果文件类型为.py文件
+        elseif expand("%:e") == 'py'
+                call setline(1, "\#!/usr/bin/env python")
+                call setline(2, "\# -*- coding=utf8 -*-")
+		call setline(3, "")
+                call setline(4, "#************************************************")  
+		call setline(5, '#      Filename: '.expand("%"))
+                call setline(6, "#        Author: wangshuguang - buaa_wsg@163.com")  
+                call setline(7, "#   Description: ---")  
+                call setline(8, "#       Created: ".strftime("%Y-%m-%d %H:%M:%S"))
+		call setline(9, "# Last Modified: ".strftime("%Y-%m-%d %H:%M:%S"))  
+                call setline(10, "#************************************************/")  
+                call setline(11, "")  
+        "如果文件类型为.java文件
+        elseif expand("%:e") == 'java'  
+                call setline(1, "//coding=utf8")  
+                call setline(2, "/** ************************************************")  
+		call setline(3, '#      Filename: '.expand("%"))
+                call setline(4, "#        Author: wangshuguang - buaa_wsg@163.com")  
+                call setline(5, "#   Description: ---")  
+                call setline(6, "#       Created: ".strftime("%Y-%m-%d %H:%M:%S"))
+		call setline(7, "# Last Modified: ".strftime("%Y-%m-%d %H:%M:%S"))  
+                call setline(8, "#*********************************************** */")  
+                call setline(9,"")  
+        elseif expand("%:e") == 'php'  
+		call setline(1, "<?php")
+		call setline(2, "")
+                call setline(3, "#************************************************")  
+		call setline(4, '#      Filename: '.expand("%"))
+                call setline(5, "#        Author: wangshuguang - buaa_wsg@163.com")  
+                call setline(6, "#   Description: ---")  
+                call setline(7, "#       Created: ".strftime("%Y-%m-%d %H:%M:%S"))
+		call setline(8, "# Last Modified: ".strftime("%Y-%m-%d %H:%M:%S"))  
+                call setline(9, "#************************************************/")  
+                call setline(10, "")  		
+        endif
+endfunc
+" 自动将光标移动到文件末尾
+autocmd BufNewfile * normal G
+
+" 对已有文件增加 <F2> 触发增加注释
+map <F2> :call SetComment()<CR>:10<CR>o
+"SET Comment END
+
+"SET Last Modified Time START，及时更新最近修改时间
+func DataInsert()
+    call cursor(9,1)
+    if search ('Last Modified') != 0
+        let line = line('.')
+        call setline(line, '# Last Modified: '.strftime("%Y-%m-%d %H:%M:%S"))
+    endif
+endfunc
+ 
+autocmd FileWritePre,BufWritePre *.php,*.c,*.cpp,*.sh,*.py,*.java  ks|call DataInsert() |'s
+"SET Last Modified Time END
