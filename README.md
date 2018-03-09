@@ -138,7 +138,8 @@ sh start.sh 把abc.jar启动（以 com.yidian.cha.abc为入口类）
 注意事项     |推荐使用，无注意事项|
 ### 1.1 为什么写
 使用 vim 编写文件时候经常想添加注释但是又嫌麻烦，所以干脆借鉴网上的大神们的vimrc脚本自己拼凑了一个比较全的版本
-![实际效果图](https://github.com/Cnetwork/work_script/picture/006-01.png)
+
+![实际效果](https://github.com/Cnetwork/work_script/blob/master/picture/006-01.png)
 
 主要集中了以下几个功能
 
