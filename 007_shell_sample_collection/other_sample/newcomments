@@ -1,0 +1,224 @@
+<html op="newcomments"><head><meta name="referrer" content="origin"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" type="text/css" href="news.css?ydBAjtuUUixixqX68OlJ">
+        <link rel="shortcut icon" href="favicon.ico">
+        <title>New Comments | Hacker News</title></head><body><center><table id="hnmain" border="0" cellpadding="0" cellspacing="0" width="85%" bgcolor="#f6f6ef">
+        <tr><td bgcolor="#ff6600"><table border="0" cellpadding="0" cellspacing="0" width="100%" style="padding:2px"><tr><td style="width:18px;padding-right:4px"><a href="https://news.ycombinator.com"><img src="y18.gif" width="18" height="18" style="border:1px white solid;"></a></td>
+                  <td style="line-height:12pt; height:10px;"><span class="pagetop"><b class="hnname"><a href="news">Hacker News</a></b>
+              <a href="newest">new</a> | <span class="topsel"><a href="newcomments">comments</a></span> | <a href="show">show</a> | <a href="ask">ask</a> | <a href="jobs">jobs</a> | <a href="submit">submit</a>            </span></td><td style="text-align:right;padding-right:4px;"><span class="pagetop">
+                              <a href="login?goto=newcomments">login</a>
+                          </span></td>
+              </tr></table></td></tr>
+<tr style="height:10px"></tr><tr><td><table border="0" cellpadding="0" cellspacing="0" class="itemlist">
+          <tr class='athing' id='16616946'>    <td class='ind'></td><td valign="top" class="votelinks"><center><a id='up_16616946' href='vote?id=16616946&amp;how=up&amp;goto=newcomments'><div class='votearrow' title='upvote'></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=inopinatus" class="hnuser">inopinatus</a> <span class="age"><a href="item?id=16616946">0 minutes ago</a></span> <span id="unv_16616946"></span><span class="par"> | <a href="item?id=16616593">parent</a></span> <a class="togg" n="1" href="javascript:void(0)" onclick="return toggle(event, 16616946)"></a>          <span class='storyon'> | on: <a href="item?id=16616138">Quiver – The Programmer's Notebook</a></span>
+                  </span></div><br><div class="comment">
+                  <span class="c00">It’s stalled and with some unfortunate bugs in the change detection that can (and have, for me) lead to data loss.   I love the cell structure and note organisation, but Quiver makes me nervous and I don’t use it anymore except as a temporary cache for ideas and snippets.<span>
+              </span><div class='reply'></div></td></tr>
+    <tr class="spacer" style="height:15px"></tr>
+            <tr class='athing' id='16616944'>    <td class='ind'></td><td valign="top" class="votelinks"><center><a id='up_16616944' href='vote?id=16616944&amp;how=up&amp;goto=newcomments'><div class='votearrow' title='upvote'></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=bringtheaction" class="hnuser">bringtheaction</a> <span class="age"><a href="item?id=16616944">0 minutes ago</a></span> <span id="unv_16616944"></span><span class="par"> | <a href="item?id=16616911">parent</a></span> <a class="togg" n="1" href="javascript:void(0)" onclick="return toggle(event, 16616944)"></a>          <span class='storyon'> | on: <a href="item?id=16616357">TCP as an underspecified two-node consensus algori...</a></span>
+                  </span></div><br><div class="comment">
+                  <span class="c00">Off-topic on my part here but I think it is so weird that people say “TFA” when referring to the article in the way you are doing. I see this a lot on HN.<p>IMO it would be natural to use “TFA” in the same way you would use “RTFM” — when you are scolding someone for not having read what they should. But using “TFA” as just a synonym for “the article”... it always throws me off.<span>
+              </span><div class='reply'></div></td></tr>
+    <tr class="spacer" style="height:15px"></tr>
+            <tr class='athing' id='16616942'>    <td class='ind'></td><td valign="top" class="votelinks"><center><a id='up_16616942' href='vote?id=16616942&amp;how=up&amp;goto=newcomments'><div class='votearrow' title='upvote'></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=LandR" class="hnuser">LandR</a> <span class="age"><a href="item?id=16616942">0 minutes ago</a></span> <span id="unv_16616942"></span><span class="par"> | <a href="item?id=16616848">parent</a></span> <a class="togg" n="1" href="javascript:void(0)" onclick="return toggle(event, 16616942)"></a>          <span class='storyon'> | on: <a href="item?id=16616848">I am a mediocre developer</a></span>
+                  </span></div><br><div class="comment">
+                  <span class="c00">Sounds like most developers, honestly.<p>I think about 5% of all developers out there nowadays are actually good developers. IME, most would have no idea what to do if you took away stackoverflow or their abstractions that make their day manageable.<p>A part of the problem might be that a lot I&#x27;ve met aren&#x27;t at all interested in development, it&#x27;s a job and they like the pay. They also just see it as a stepping stone to management.<p>When I do ask people at work how something actually works they rarely know. I get told just use &#x27;x&#x27; it hides all that stuff away for you!<p>When I bring up basic concepts around coding, and therefore issues in their code, I get blank stares.<p>I mean, i&#x27;ve seen me having to explain to a C# dev with a few years experience why something like the following didn&#x27;t work:<p><pre><code>    string s = &quot;foobar&quot;;
+    s.Substring(1, 2);
+    Console.WriteLine(s);
+</code></pre>
+He didn&#x27;t know strings were immutable, didn&#x27;t know how to understand the documentation for Substring and had never heard of immutability.<p>Similarly, I&#x27;ve had to explain why something like the following prints 5 and not 6:<p><pre><code>    void Main()
+    {
+        int x = 5;
+        Foo(x);
+        Console.WriteLine(x);
+    }
+
+     void Foo(int x) =&gt; x++;
+
+</code></pre>
+A developer this time who had no idea about reference types &amp; value types.<p>I don&#x27;t know how we fix this though. As the people hiring and doing the interviews often don&#x27;t know what they are doing either. So the blind hires the blind.<span>
+              </span><div class='reply'></div></td></tr>
+    <tr class="spacer" style="height:15px"></tr>
+            <tr class='athing' id='16616941'>    <td class='ind'></td><td valign="top" class="votelinks"><center><a id='up_16616941' href='vote?id=16616941&amp;how=up&amp;goto=newcomments'><div class='votearrow' title='upvote'></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=IshKebab" class="hnuser">IshKebab</a> <span class="age"><a href="item?id=16616941">0 minutes ago</a></span> <span id="unv_16616941"></span><span class="par"> | <a href="item?id=16616601">parent</a></span> <a class="togg" n="1" href="javascript:void(0)" onclick="return toggle(event, 16616941)"></a>          <span class='storyon'> | on: <a href="item?id=16615372">Knusperli: A deblocking JPEG decoder</a></span>
+                  </span></div><br><div class="comment">
+                  <span class="c00">Yes but there still isn&#x27;t a universally supported &quot;good format&quot; so JPEG often gets used for text.<span>
+              </span><div class='reply'></div></td></tr>
+    <tr class="spacer" style="height:15px"></tr>
+            <tr class='athing' id='16616940'>    <td class='ind'></td><td valign="top" class="votelinks"><center><a id='up_16616940' href='vote?id=16616940&amp;how=up&amp;goto=newcomments'><div class='votearrow' title='upvote'></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=adrianN" class="hnuser">adrianN</a> <span class="age"><a href="item?id=16616940">1 minute ago</a></span> <span id="unv_16616940"></span><span class="par"> | <a href="item?id=16616880">parent</a></span> <a class="togg" n="1" href="javascript:void(0)" onclick="return toggle(event, 16616940)"></a>          <span class='storyon'> | on: <a href="item?id=16616560">2 weeks before death, Hawking submitted a paper on...</a></span>
+                  </span></div><br><div class="comment">
+                  <span class="c00">I&#x27;m no physicist, but my impression is that the observable universe is already smaller than the universe.<span>
+              </span><div class='reply'></div></td></tr>
+    <tr class="spacer" style="height:15px"></tr>
+            <tr class='athing' id='16616939'>    <td class='ind'></td><td valign="top" class="votelinks"><center><a id='up_16616939' href='vote?id=16616939&amp;how=up&amp;goto=newcomments'><div class='votearrow' title='upvote'></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=ralphm" class="hnuser">ralphm</a> <span class="age"><a href="item?id=16616939">1 minute ago</a></span> <span id="unv_16616939"></span><span class="par"> | <a href="item?id=16616848">parent</a></span> <a class="togg" n="1" href="javascript:void(0)" onclick="return toggle(event, 16616939)"></a>          <span class='storyon'> | on: <a href="item?id=16616848">I am a mediocre developer</a></span>
+                  </span></div><br><div class="comment">
+                  <span class="c00">A great keynote by Jacob Kaplan-Moss at PyCon 2015 along similar lines: <a href="https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=hIJdFxYlEKE" rel="nofollow">https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=hIJdFxYlEKE</a><span>
+              </span><div class='reply'></div></td></tr>
+    <tr class="spacer" style="height:15px"></tr>
+            <tr class='athing' id='16616938'>    <td class='ind'></td><td valign="top" class="votelinks"><center><a id='up_16616938' href='vote?id=16616938&amp;how=up&amp;goto=newcomments'><div class='votearrow' title='upvote'></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=GabeRicard" class="hnuser">GabeRicard</a> <span class="age"><a href="item?id=16616938">1 minute ago</a></span> <span id="unv_16616938"></span><span class="par"> | <a href="item?id=16615602">parent</a></span> <a class="togg" n="1" href="javascript:void(0)" onclick="return toggle(event, 16616938)"></a>          <span class='storyon'> | on: <a href="item?id=16615275">An attempt to upgrade to Webpack 4</a></span>
+                  </span></div><br><div class="comment">
+                  <span class="c00">Because I was just trying it out? Are you saying it&#x27;s wrong to test a beta and provide feedback to the authors?<span>
+              </span><div class='reply'></div></td></tr>
+    <tr class="spacer" style="height:15px"></tr>
+            <tr class='athing' id='16616937'>    <td class='ind'></td><td valign="top" class="votelinks"><center><a id='up_16616937' href='vote?id=16616937&amp;how=up&amp;goto=newcomments'><div class='votearrow' title='upvote'></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=jshevek" class="hnuser">jshevek</a> <span class="age"><a href="item?id=16616937">2 minutes ago</a></span> <span id="unv_16616937"></span><span class="par"> | <a href="item?id=16616698">parent</a></span> <a class="togg" n="1" href="javascript:void(0)" onclick="return toggle(event, 16616937)"></a>          <span class='storyon'> | on: <a href="item?id=16612939">Hackers Are So Fed Up with Twitter Bots They’re Hu...</a></span>
+                  </span></div><br><div class="comment">
+                  <span class="c00">I don&#x27;t see how that is &quot;begging the question&quot;, which means  &quot;to assume the truth of the conclusion of an argument in the premises in order for the conclusion to follow.&quot;<span>
+              </span><div class='reply'></div></td></tr>
+    <tr class="spacer" style="height:15px"></tr>
+            <tr class='athing' id='16616936'>    <td class='ind'></td><td valign="top" class="votelinks"><center><a id='up_16616936' href='vote?id=16616936&amp;how=up&amp;goto=newcomments'><div class='votearrow' title='upvote'></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=ccozan" class="hnuser">ccozan</a> <span class="age"><a href="item?id=16616936">2 minutes ago</a></span> <span id="unv_16616936"></span><span class="par"> | <a href="item?id=16616839">parent</a></span> <a class="togg" n="1" href="javascript:void(0)" onclick="return toggle(event, 16616936)"></a>          <span class='storyon'> | on: <a href="item?id=16616560">2 weeks before death, Hawking submitted a paper on...</a></span>
+                  </span></div><br><div class="comment">
+                  <span class="c00">For now, we can define the current Univers as a set of universal constants that rule it.<p>Other constants would actually lead to a different universe.<p>Now, if we strech our imagination, let&#x27;s have an &quot;space&quot; (meta universe ) where universes are just regions where this contants are active, and there is a slow transision from one &quot;unverse&quot; region to the other. Much like arctic reagion vs. tropical. However, this transision is unlike anything, could be a spacetime&#x2F;quantum level&#x2F;?? transition. At this moment, this transition is not measurable.<span>
+              </span><div class='reply'></div></td></tr>
+    <tr class="spacer" style="height:15px"></tr>
+            <tr class='athing' id='16616934'>    <td class='ind'></td><td valign="top" class="votelinks"><center><a id='up_16616934' href='vote?id=16616934&amp;how=up&amp;goto=newcomments'><div class='votearrow' title='upvote'></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=pjmlp" class="hnuser">pjmlp</a> <span class="age"><a href="item?id=16616934">2 minutes ago</a></span> <span id="unv_16616934"></span><span class="par"> | <a href="item?id=16616747">parent</a></span> <a class="togg" n="1" href="javascript:void(0)" onclick="return toggle(event, 16616934)"></a>          <span class='storyon'> | on: <a href="item?id=16615420">A Look Back at the 1960s PLATO Computing System</a></span>
+                  </span></div><br><div class="comment">
+                  <span class="c00">Lisp Machines REPL was graphically based, not text based.<p>So the REPL could display any kind of data structure, and later calls could influence already displayed data.<p><a href="https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=o4-YnLpLgtk&amp;t=687s" rel="nofollow">https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=o4-YnLpLgtk&amp;t=687s</a><p><a href="https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=6uPwQuxjgQo" rel="nofollow">https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=6uPwQuxjgQo</a><p><a href="https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=IMN5RSIm6xw" rel="nofollow">https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=IMN5RSIm6xw</a><p>There was GUI based debuggers.<p>Then there was the access of the complete OS stack and other running applications, and everything was compiled to native code, there wasn&#x27;t any VM running.<p>Try do do a <i>(disassemble func)</i> on Emacs for seeing actual 80x86&#x2F;ARM,....<span>
+              </span><div class='reply'></div></td></tr>
+    <tr class="spacer" style="height:15px"></tr>
+            <tr class='athing' id='16616932'>    <td class='ind'></td><td valign="top" class="votelinks"><center><a id='up_16616932' href='vote?id=16616932&amp;how=up&amp;goto=newcomments'><div class='votearrow' title='upvote'></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=nahumfarchi" class="hnuser">nahumfarchi</a> <span class="age"><a href="item?id=16616932">3 minutes ago</a></span> <span id="unv_16616932"></span><span class="par"> | <a href="item?id=16616838">parent</a></span> <a class="togg" n="1" href="javascript:void(0)" onclick="return toggle(event, 16616932)"></a>          <span class='storyon'> | on: <a href="item?id=16616560">2 weeks before death, Hawking submitted a paper on...</a></span>
+                  </span></div><br><div class="comment">
+                  <span class="c00">Isn&#x27;t it the other way around? You start out with assumptions and a model (which usually involves some math), and then you show that you&#x27;ve made the correct assumptions by empirically testing it. You can&#x27;t prove something in the mathematical sense about physical reality. So I can&#x27;t see how a mathematical proof of a physical theory can exist.<span>
+              </span><div class='reply'></div></td></tr>
+    <tr class="spacer" style="height:15px"></tr>
+            <tr class='athing' id='16616931'>    <td class='ind'></td><td valign="top" class="votelinks"><center><a id='up_16616931' href='vote?id=16616931&amp;how=up&amp;goto=newcomments'><div class='votearrow' title='upvote'></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=Endy" class="hnuser">Endy</a> <span class="age"><a href="item?id=16616931">3 minutes ago</a></span> <span id="unv_16616931"></span><span class="par"> | <a href="item?id=16593846">parent</a></span> <a class="togg" n="1" href="javascript:void(0)" onclick="return toggle(event, 16616931)"></a>          <span class='storyon'> | on: <a href="item?id=16593846">Ask HN: Tips for resigning a remote position?</a></span>
+                  </span></div><br><div class="comment">
+                  <span class="c00">Let&#x27;s start with the obvious - do you have your job offer and your start date for your new position?  Based on everything about that job, will you prefer it to your current work?  If you don&#x27;t have an offer letter and a start date, don&#x27;t even think about this; you could end up with the new job being a non-starter and out of your old job too.<p>I would strongly suggest calling your manager directly - make it the fifth time.  Explain your new situation and give your notice.  If you&#x27;re willing to continue working for the current remote work, explain the reasoning for leaving - especially if we&#x27;re talking about benefits, salary, etc.  See if you get a counteroffer.<span>
+              </span><div class='reply'></div></td></tr>
+    <tr class="spacer" style="height:15px"></tr>
+            <tr class='athing' id='16616930'>    <td class='ind'></td><td valign="top" class="votelinks"><center><a id='up_16616930' href='vote?id=16616930&amp;how=up&amp;goto=newcomments'><div class='votearrow' title='upvote'></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=ozim" class="hnuser">ozim</a> <span class="age"><a href="item?id=16616930">3 minutes ago</a></span> <span id="unv_16616930"></span><span class="par"> | <a href="item?id=16616157">parent</a></span> <a class="togg" n="1" href="javascript:void(0)" onclick="return toggle(event, 16616930)"></a>          <span class='storyon'> | on: <a href="item?id=16615593">Saas CTO Security Checklist</a></span>
+                  </span></div><br><div class="comment">
+                  <span class="c00">For SSL I think there is industry consensus to push for HTTPS everywhere. There is no argument to skip it. With free lets encrypt certificates. It is not like you will spend a week implementing it, without prior experience decent developer should have it up and running in half of day.<span>
+              </span><div class='reply'></div></td></tr>
+    <tr class="spacer" style="height:15px"></tr>
+            <tr class='athing' id='16616929'>    <td class='ind'></td><td valign="top" class="votelinks"><center><a id='up_16616929' href='vote?id=16616929&amp;how=up&amp;goto=newcomments'><div class='votearrow' title='upvote'></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=wingerlang" class="hnuser">wingerlang</a> <span class="age"><a href="item?id=16616929">3 minutes ago</a></span> <span id="unv_16616929"></span><span class="par"> | <a href="item?id=16616650">parent</a></span> <a class="togg" n="1" href="javascript:void(0)" onclick="return toggle(event, 16616929)"></a>          <span class='storyon'> | on: <a href="item?id=16616650">Ask HN: How did you make your first dollar online?</a></span>
+                  </span></div><br><div class="comment">
+                  <span class="c00">Ignoring freelance work (because it is kinda boring).<p>I built a simple iOS application with iAPs. I think I had 2-3 purchases in 1 year. Later I built a bunch &#x27;apps&#x27; for jailbroken phones, which I still sell.<p>Actually I translated a local web-based game into Swedish as (probably) my first online mini gig, which in hindsight isn&#x27;t &#x2F;that&#x2F; boring.<span>
+              </span><div class='reply'></div></td></tr>
+    <tr class="spacer" style="height:15px"></tr>
+            <tr class='athing' id='16616928'>    <td class='ind'></td><td valign="top" class="votelinks"><center><a id='up_16616928' href='vote?id=16616928&amp;how=up&amp;goto=newcomments'><div class='votearrow' title='upvote'></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=jmcgough" class="hnuser">jmcgough</a> <span class="age"><a href="item?id=16616928">3 minutes ago</a></span> <span id="unv_16616928"></span><span class="par"> | <a href="item?id=16616705">parent</a></span> <a class="togg" n="1" href="javascript:void(0)" onclick="return toggle(event, 16616928)"></a>          <span class='storyon'> | on: <a href="item?id=16616110">She Was My World, but We Couldn’t Marry</a></span>
+                  </span></div><br><div class="comment">
+                  <span class="c00">Also to keep in mind is that she&#x27;d be on the hook for his medical bills if they wed.<span>
+              </span><div class='reply'></div></td></tr>
+    <tr class="spacer" style="height:15px"></tr>
+            <tr class='athing' id='16616927'>    <td class='ind'></td><td valign="top" class="votelinks"><center><a id='up_16616927' href='vote?id=16616927&amp;how=up&amp;goto=newcomments'><div class='votearrow' title='upvote'></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=greglindahl" class="hnuser">greglindahl</a> <span class="age"><a href="item?id=16616927">3 minutes ago</a></span> <span id="unv_16616927"></span><span class="par"> | <a href="item?id=16614462">parent</a></span> <a class="togg" n="1" href="javascript:void(0)" onclick="return toggle(event, 16616927)"></a>          <span class='storyon'> | on: <a href="item?id=16587249">Tesla employees say automaker produces flawed part...</a></span>
+                  </span></div><br><div class="comment">
+                  <span class="c00">There are tons of engineers in the Valley who have families to consider and still swap jobs every 2 years.<span>
+              </span><div class='reply'></div></td></tr>
+    <tr class="spacer" style="height:15px"></tr>
+            <tr class='athing' id='16616926'>    <td class='ind'></td><td valign="top" class="votelinks"><center><a id='up_16616926' href='vote?id=16616926&amp;how=up&amp;goto=newcomments'><div class='votearrow' title='upvote'></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=vardump" class="hnuser">vardump</a> <span class="age"><a href="item?id=16616926">3 minutes ago</a></span> <span id="unv_16616926"></span><span class="par"> | <a href="item?id=16616211">parent</a></span> <a class="togg" n="1" href="javascript:void(0)" onclick="return toggle(event, 16616926)"></a>          <span class='storyon'> | on: <a href="item?id=16615372">Knusperli: A deblocking JPEG decoder</a></span>
+                  </span></div><br><div class="comment">
+                  <span class="c00">Maybe these two approaches, jpeg2png and Knusperli, could be combined to get potentially superior end result.<p>Knusperli would run first, to reduce quantization discontinuities a bit.<span>
+              </span><div class='reply'></div></td></tr>
+    <tr class="spacer" style="height:15px"></tr>
+            <tr class='athing' id='16616925'>    <td class='ind'></td><td valign="top" class="votelinks"><center><a id='up_16616925' href='vote?id=16616925&amp;how=up&amp;goto=newcomments'><div class='votearrow' title='upvote'></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=adrianN" class="hnuser">adrianN</a> <span class="age"><a href="item?id=16616925">3 minutes ago</a></span> <span id="unv_16616925"></span><span class="par"> | <a href="item?id=16616887">parent</a></span> <a class="togg" n="1" href="javascript:void(0)" onclick="return toggle(event, 16616925)"></a>          <span class='storyon'> | on: <a href="item?id=16616560">2 weeks before death, Hawking submitted a paper on...</a></span>
+                  </span></div><br><div class="comment">
+                  <span class="c00">Technically you might be able to do a proof by exclusion if you can show that only one of all the possible theories is sound and consistent.<span>
+              </span><div class='reply'></div></td></tr>
+    <tr class="spacer" style="height:15px"></tr>
+            <tr class='athing' id='16616924'>    <td class='ind'></td><td valign="top" class="votelinks"><center><a id='up_16616924' href='vote?id=16616924&amp;how=up&amp;goto=newcomments'><div class='votearrow' title='upvote'></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=gardnr" class="hnuser">gardnr</a> <span class="age"><a href="item?id=16616924">3 minutes ago</a></span> <span id="unv_16616924"></span><span class="par"> | <a href="item?id=16613927">parent</a></span> <a class="togg" n="1" href="javascript:void(0)" onclick="return toggle(event, 16616924)"></a>          <span class='storyon'> | on: <a href="item?id=16612151">AWS Lambda and .zip is a recipe for serverless suc...</a></span>
+                  </span></div><br><div class="comment">
+                  <span class="c00">I agree with you about the term &quot;serverless&quot; being silly, especially in a time when all the various forms of decentralized architecture are beginning to come of age. It makes it difficult to find information on &quot;serverless webrtc signalling.&quot;<p>While other auto-scaling PaaS exist, the granularity of the lambda pricing model is fairly new and groundbreaking. A service can be launched that may see very little use and just costs pennies to test out during its initial phases. That same service will scale exponentially rather easily in comparison to a similar deployment on a traditional server.<span>
+              </span><div class='reply'></div></td></tr>
+    <tr class="spacer" style="height:15px"></tr>
+            <tr class='athing' id='16616923'>    <td class='ind'></td><td valign="top" class="votelinks"><center><a id='up_16616923' href='vote?id=16616923&amp;how=up&amp;goto=newcomments'><div class='votearrow' title='upvote'></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=royjacobs" class="hnuser">royjacobs</a> <span class="age"><a href="item?id=16616923">3 minutes ago</a></span> <span id="unv_16616923"></span><span class="par"> | <a href="item?id=16614961">parent</a></span> <a class="togg" n="1" href="javascript:void(0)" onclick="return toggle(event, 16616923)"></a>          <span class='storyon'> | on: <a href="item?id=16611488">Gaijin Engineer in Tokyo</a></span>
+                  </span></div><br><div class="comment">
+                  <span class="c00">Texas is not necessarily seen as a positive thing, though. At least in Europe it&#x27;s seen as the exponent of the &#x27;worst&#x27; things that the US has to offer (guns, cars with terrible gas mileage, AC in giant McMansions running 24&#x2F;7, etc).<span>
+              </span><div class='reply'></div></td></tr>
+    <tr class="spacer" style="height:15px"></tr>
+            <tr class='athing' id='16616922'>    <td class='ind'></td><td valign="top" class="votelinks"><center><a id='up_16616922' href='vote?id=16616922&amp;how=up&amp;goto=newcomments'><div class='votearrow' title='upvote'></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=maruhan2" class="hnuser">maruhan2</a> <span class="age"><a href="item?id=16616922">4 minutes ago</a></span> <span id="unv_16616922"></span><span class="par"> | <a href="item?id=16615593">parent</a></span> <a class="togg" n="1" href="javascript:void(0)" onclick="return toggle(event, 16616922)"></a>          <span class='storyon'> | on: <a href="item?id=16615593">Saas CTO Security Checklist</a></span>
+                  </span></div><br><div class="comment">
+                  <span class="c00">&quot;It will protect against both malicious activities and accidents (e.g. an employee’s child accidentally wiping a mailbox).&quot;<p>Can someone help me understand how a child accidentally wiping a mailbox is related to encryption? Isn&#x27;t this just a matter of putting a password on your computer and not related to encryption?<span>
+              </span><div class='reply'></div></td></tr>
+    <tr class="spacer" style="height:15px"></tr>
+            <tr class='athing' id='16616921'>    <td class='ind'></td><td valign="top" class="votelinks"><center><a id='up_16616921' href='vote?id=16616921&amp;how=up&amp;goto=newcomments'><div class='votearrow' title='upvote'></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=teekert" class="hnuser">teekert</a> <span class="age"><a href="item?id=16616921">4 minutes ago</a></span> <span id="unv_16616921"></span><span class="par"> | <a href="item?id=16616218">parent</a></span> <a class="togg" n="1" href="javascript:void(0)" onclick="return toggle(event, 16616921)"></a>          <span class='storyon'> | on: <a href="item?id=16616218">Ghana teacher drawing MS word on blackboard gets r...</a></span>
+                  </span></div><br><div class="comment">
+                  <span class="c00">Funny because the blackboard doesn&#x27;t mention MS Word anywhere as far as I can tell, it mentions &quot;Features of a word processing window&quot; and it doesn&#x27;t specifically look like MS Word either. This also makes me wonder what happened to the one Laptop per Child project [0], their G+ site was not posted on since November 2016. Is it really Microsoft Word that is going to be used by these students? Or will it be LibreOffice or Google Docs?<p>[0] <a href="http:&#x2F;&#x2F;one.laptop.org&#x2F;" rel="nofollow">http:&#x2F;&#x2F;one.laptop.org&#x2F;</a><span>
+              </span><div class='reply'></div></td></tr>
+    <tr class="spacer" style="height:15px"></tr>
+            <tr class='athing' id='16616920'>    <td class='ind'></td><td valign="top" class="votelinks"><center><a id='up_16616920' href='vote?id=16616920&amp;how=up&amp;goto=newcomments'><div class='votearrow' title='upvote'></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=GabeRicard" class="hnuser">GabeRicard</a> <span class="age"><a href="item?id=16616920">4 minutes ago</a></span> <span id="unv_16616920"></span><span class="par"> | <a href="item?id=16615275">parent</a></span> <a class="togg" n="1" href="javascript:void(0)" onclick="return toggle(event, 16616920)"></a>          <span class='storyon'> | on: <a href="item?id=16615275">An attempt to upgrade to Webpack 4</a></span>
+                  </span></div><br><div class="comment">
+                  <span class="c00">Author of the gist here. Please don&#x27;t take this as me complaining about webpack 4 in any way. This was me detailing my process of migrating to the webpack 4 BETA in order to provide feedback to the webpack team, and potentially help anyone else out who got stuck on a few things like I did.<p>They&#x27;re updating the documentation. Webpack is awesome and v4 is a great update and I highly recommend people try it out.<span>
+              </span><div class='reply'></div></td></tr>
+    <tr class="spacer" style="height:15px"></tr>
+            <tr class='athing' id='16616918'>    <td class='ind'></td><td valign="top" class="votelinks"><center><a id='up_16616918' href='vote?id=16616918&amp;how=up&amp;goto=newcomments'><div class='votearrow' title='upvote'></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=TeMPOraL" class="hnuser">TeMPOraL</a> <span class="age"><a href="item?id=16616918">4 minutes ago</a></span> <span id="unv_16616918"></span><span class="par"> | <a href="item?id=16615408">parent</a></span> <a class="togg" n="1" href="javascript:void(0)" onclick="return toggle(event, 16616918)"></a>          <span class='storyon'> | on: <a href="item?id=16614354">Rubber that can make and store power from light an...</a></span>
+                  </span></div><br><div class="comment">
+                  <span class="c00">In space, electricity is always welcome, while vibrations are usually not. So to the first approximation, sure, why not?<span>
+              </span><div class='reply'></div></td></tr>
+    <tr class="spacer" style="height:15px"></tr>
+            <tr class='athing' id='16616916'>    <td class='ind'></td><td valign="top" class="votelinks"><center><a id='up_16616916' href='vote?id=16616916&amp;how=up&amp;goto=newcomments'><div class='votearrow' title='upvote'></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=mdpopescu" class="hnuser">mdpopescu</a> <span class="age"><a href="item?id=16616916">5 minutes ago</a></span> <span id="unv_16616916"></span><span class="par"> | <a href="item?id=16616340">parent</a></span> <a class="togg" n="1" href="javascript:void(0)" onclick="return toggle(event, 16616916)"></a>          <span class='storyon'> | on: <a href="item?id=16616095">Edward Snowden: Facebook is a surveillance company...</a></span>
+                  </span></div><br><div class="comment">
+                  <span class="c00">&gt; the USA does not generally act on the information that is shared<p>How would you know that?<p>In any case, the UK does. [1]<p>[1] <a href="http:&#x2F;&#x2F;www.vocativ.com&#x2F;325190&#x2F;arrests-for-social-media-posts-surge-in-london&#x2F;" rel="nofollow">http:&#x2F;&#x2F;www.vocativ.com&#x2F;325190&#x2F;arrests-for-social-media-posts...</a><span>
+              </span><div class='reply'></div></td></tr>
+    <tr class="spacer" style="height:15px"></tr>
+            <tr class='athing' id='16616914'>    <td class='ind'></td><td valign="top" class="votelinks"><center><a id='up_16616914' href='vote?id=16616914&amp;how=up&amp;goto=newcomments'><div class='votearrow' title='upvote'></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=IshKebab" class="hnuser">IshKebab</a> <span class="age"><a href="item?id=16616914">5 minutes ago</a></span> <span id="unv_16616914"></span><span class="par"> | <a href="item?id=16616584">parent</a></span> <a class="togg" n="1" href="javascript:void(0)" onclick="return toggle(event, 16616914)"></a>          <span class='storyon'> | on: <a href="item?id=16615678">Apple Is Developing Its Own Screens for the First ...</a></span>
+                  </span></div><br><div class="comment">
+                  <span class="c00">This was done several years ago, I think by Microsoft.<span>
+              </span><div class='reply'></div></td></tr>
+    <tr class="spacer" style="height:15px"></tr>
+            <tr class='athing' id='16616913'>    <td class='ind'></td><td valign="top" class="votelinks"><center><a id='up_16616913' href='vote?id=16616913&amp;how=up&amp;goto=newcomments'><div class='votearrow' title='upvote'></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=rahulroy9202" class="hnuser">rahulroy9202</a> <span class="age"><a href="item?id=16616913">5 minutes ago</a></span> <span id="unv_16616913"></span><span class="par"> | <a href="item?id=16616670">parent</a></span> <a class="togg" n="1" href="javascript:void(0)" onclick="return toggle(event, 16616913)"></a>          <span class='storyon'> | on: <a href="item?id=16616464">Archive.is still using Chrome 52</a></span>
+                  </span></div><br><div class="comment">
+                  <span class="c00">Any idea what they are actually using?<span>
+              </span><div class='reply'></div></td></tr>
+    <tr class="spacer" style="height:15px"></tr>
+            <tr class='athing' id='16616912'>    <td class='ind'></td><td valign="top" class="votelinks"><center><a id='up_16616912' href='vote?id=16616912&amp;how=up&amp;goto=newcomments'><div class='votearrow' title='upvote'></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=product50" class="hnuser">product50</a> <span class="age"><a href="item?id=16616912">6 minutes ago</a></span> <span id="unv_16616912"></span><span class="par"> | <a href="item?id=16616655">parent</a></span> <a class="togg" n="1" href="javascript:void(0)" onclick="return toggle(event, 16616912)"></a>          <span class='storyon'> | on: <a href="item?id=16616095">Edward Snowden: Facebook is a surveillance company...</a></span>
+                  </span></div><br><div class="comment">
+                  <span class="c00">Yes - FB does all the things it does because it wants to sell your data off to Russia. That is its mission statement. Awesome right since that is what you want to hear. Lets go back now - party is all over.<span>
+              </span><div class='reply'></div></td></tr>
+    <tr class="spacer" style="height:15px"></tr>
+            <tr class='athing' id='16616911'>    <td class='ind'></td><td valign="top" class="votelinks"><center><a id='up_16616911' href='vote?id=16616911&amp;how=up&amp;goto=newcomments'><div class='votearrow' title='upvote'></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=nvarsj" class="hnuser">nvarsj</a> <span class="age"><a href="item?id=16616911">6 minutes ago</a></span> <span id="unv_16616911"></span><span class="par"> | <a href="item?id=16616832">parent</a></span> <a class="togg" n="2" href="javascript:void(0)" onclick="return toggle(event, 16616911)"></a>          <span class='storyon'> | on: <a href="item?id=16616357">TCP as an underspecified two-node consensus algori...</a></span>
+                  </span></div><br><div class="comment">
+                  <span class="c00">&gt; I dont grok this, if tcp&#x27;s model has fundamental problems how come the Internet works. :)<p>Depends on your definition of &quot;works&quot;! Just ask any gamer what happens when someone starts using netflix while they&#x27;re playing a game... For a lot of people the internet doesn&#x27;t work very well.<p>TFA is describing, I think, the issue of stale &#x2F; dead connections - which can be notoriously difficult to detect. Imagine you are building black boxes that sit in peoples&#x27; homes, with a long running TCP connection to push notifications to. With the state of the internet, it&#x27;s very likely some percentage of those connections will die without either side realizing it. That&#x27;s where the complexity comes in.<span>
+              </span><div class='reply'></div></td></tr>
+    <tr class="spacer" style="height:15px"></tr>
+            <tr class='athing' id='16616910'>    <td class='ind'></td><td valign="top" class="votelinks"><center><a id='up_16616910' href='vote?id=16616910&amp;how=up&amp;goto=newcomments'><div class='votearrow' title='upvote'></div></a></center></td><td class="default"><div style="margin-top:2px; margin-bottom:-10px;"><span class="comhead">
+          <a href="user?id=GabeRicard" class="hnuser">GabeRicard</a> <span class="age"><a href="item?id=16616910">6 minutes ago</a></span> <span id="unv_16616910"></span><span class="par"> | <a href="item?id=16616618">parent</a></span> <a class="togg" n="1" href="javascript:void(0)" onclick="return toggle(event, 16616910)"></a>          <span class='storyon'> | on: <a href="item?id=16615275">An attempt to upgrade to Webpack 4</a></span>
+                  </span></div><br><div class="comment">
+                  <span class="c00">I&#x27;m the author of the gist. You&#x27;re exactly right. This was me guessing when I didn&#x27;t understand the configuration options, because this was my attempt at learning the BETA of webpack 4 without the new docs available.<span>
+              </span><div class='reply'></div></td></tr>
+    <tr class="spacer" style="height:15px"></tr>
+            <tr class="morespace" style="height:10px"></tr><tr><td colspan="2"></td><td class="title"><a href="newcomments?next=16616909" class="morelink" rel="nofollow">More</a></td></tr>
+  </table>
+</td></tr>
+<tr><td><img src="s.gif" height="10" width="0"><table width="100%" cellspacing="0" cellpadding="1"><tr><td bgcolor="#ff6600"></td></tr></table><br><center><a href="https://www.ycombinator.com/apply/">
+        Applications are open for YC Summer 2018
+      </a></center><br><center><span class="yclinks"><a href="newsguidelines.html">Guidelines</a>
+        | <a href="newsfaq.html">FAQ</a>
+        | <a href="mailto:hn@ycombinator.com">Support</a>
+        | <a href="https://github.com/HackerNews/API">API</a>
+        | <a href="security.html">Security</a>
+        | <a href="lists">Lists</a>
+        | <a href="bookmarklet.html" rel="nofollow">Bookmarklet</a>
+        | <a href="http://www.ycombinator.com/legal/">Legal</a>
+        | <a href="http://www.ycombinator.com/apply/">Apply to YC</a>
+        | <a href="mailto:hn@ycombinator.com">Contact</a></span><br><br><form method="get" action="//hn.algolia.com/">Search:
+          <input type="text" name="q" value="" size="17" autocorrect="off" spellcheck="false" autocapitalize="off" autocomplete="false"></form>
+            </center></td></tr>
+      </table></center></body><script type='text/javascript' src='hn.js?ydBAjtuUUixixqX68OlJ'></script>
+  </html>
+consists of wangshuguang's idea
