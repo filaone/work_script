@@ -232,6 +232,48 @@ cheatset generate sample.rb
 python pyc.py command.txt 100
 ```
 
+## 010 生成命令行表格
+事项         | 备注           |
+--------------------|------------------|
+脚本语言     | ruby|
+适用系统 |macos, linux |
+推荐使用场景  |写一些注释时候需要用 |
+注意事项     | 安装Ruby先 |
+### 10.1 为什么写
+
+   在写注释时候有时候表格更加清楚一些，但是明显在`.java`中插入图片不现实，找了一个小工具可以生成命令行表格, 挺好用的，强烈推荐，让你的代码变得更清晰。
+   
+### 10.2 使用实例
+
+```
++------------+-------------+-------------+--------------------+-------------+
+| 属性       | Channel请求 | Channel请求 | keyword请求        | keyword请求 |
+| from_id    | m503949     | null        | null               | null        |
+| channel_id | null        | 14414961060 | null               | null        |
+| ctype      | null        | null        | video              | weibo       |
+| count      | null        | null        | 100                | 1           |
+| words      | null        | null        | null               | abc         |
+| q          | null        | null        | tag:vtpc_list//646 | null        |
++------------+-------------+-------------+--------------------+-------------+
+
+//对应的代码是：
+require 'terminal-table'
+  
+rows = []
+rows << ['属性', 'Channel请求', 'Channel请求', 'keyword请求','keyword请求']
+rows << ['from_id', 'm503949', 'null', 'null','null']
+rows << ['channel_id','null', '14414961060', 'null','null']
+rows << ['ctype', 'null', 'null','video','weibo']
+rows << ['count', 'null', 'null','100','1']
+rows << ['words', 'null', 'null','null','abc']
+rows << ['q','null','null','tag:vtpc_list//646','null']
+table = Terminal::Table.new :rows => rows
+puts table
+
+
+```
+
+
 -----
 ## 00x 模板
 事项         | 备注           |
