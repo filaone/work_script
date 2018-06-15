@@ -270,8 +270,54 @@ rows << ['q','null','null','tag:vtpc_list//646','null']
 table = Terminal::Table.new :rows => rows
 puts table
 
+```
+
+## 011 ElasticSearch的迁移工具
+事项         | 备注           |
+--------------------|------------------|
+脚本语言     |shell|
+适用系统 |linux, mac|
+推荐使用场景  |需要迁移ES中的Index时|
+注意事项     |安装node, 去官网了解下每个参数的含义|
+### 11.1 为什么写
+
+   做ES相关工作有倒库的需求，使用了 [ElasticDump](https://github.com/taskrabbit/elasticsearch-dump) 这个工具,速度还蛮快的。
+
+### 11.2 使用实例
 
 ```
+# Step 1: 编辑好脚本中的相关参数
+
+# Step 2: 直接运行
+sh elasticDump.sh
+```
+## 012 Docker本地部署脚本
+事项         | 备注           |
+--------------------|------------------|
+脚本语言     |shell|
+适用系统 |linux|
+推荐使用场景  |部署Docker之前编一个|
+注意事项     |没啥注意的|
+### 12.1 为什么写
+
+   直接命令部署Docker是比较简单，但是往往把命令忘了就比较尴尬了，每一个docker都写一个脚本，这样以后部署时候只要改改配置就好了。好习惯，慢慢养成。
+   需要注意的有以下几点
+   
+   - 容器获取地址
+   - 外部日志是否映射了
+   - 端口映射规则
+   - docker启动后内部初始命令
+   - net/字体/时区等细节
+
+### 12.2 使用实例
+
+```
+# Step 1 : 编辑好里面的各个配置
+
+# Step 2 : 直接运行
+sh deploy_docker.sh
+```
+
 
 
 -----
