@@ -34,3 +34,7 @@ DOCKER_RUN_OPT=" -d
 docker_cmd="docker run "${DOCKER_RUN_OPT}
 echo "docker command : "${docker_cmd}
 echo ${docker_cmd} | sh
+
+
+# 查看Log : docker logs [ContainerID]
+# 停止以及删除: docker stop/rm [ContainerID]
