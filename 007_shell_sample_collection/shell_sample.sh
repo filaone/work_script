@@ -1,14 +1,244 @@
 #!/bin/bash -v
-# test.sh
-echo "Hello, World"
 
-i=0
-# 循环 lt 是小于的意思
-while [ $i -lt 1000 ]
-do
-    ((i++))
+#  A shell sample for beginner, start each file with a description of its contents.
+#+ https://google.github.io/styleguide/shell.xml?showone=File_Header#File_Header
+
+export PATH=$PATH:'/usr/yidian/bin:/usr/bin:/opt/yidian/bin:/opt/yidian'
+export SHELL_SAMPLE_LOG="shell_sample.log"
+
+#  All error messages should go to STDERR
+#+ A function to print out error messages alone with other status information is recommonded
+err() {
+  echo "[$(date +'%Y-%m-%dT%H:%M:%S%z')] : $@" >&2
+}
+
+#  All function comments should contain: 1. Description; 2. Global variables;
+#+ 3. Arguments taken; 4. Return values & default exit status.
+#######################################
+# Cleanup files from the backup dir
+# Globals:
+#   BACKUP_DIR
+#   ORACLE_SID
+# Arguments:
+#   None
+# Returns:
+#   None
+#######################################
+cleanup() {
+  echo "Clean up process" | tee -a ${SHELL_SAMPLE_LOG}
+}
+
+#  Don't comments everthing. If there's a complex algorithm or you're doing
+#+ something out of the oridinary, put a short comment in.
+#+ Use #+ to comment multiline comments.
+echo "Hello, Yidian World!" | tee -a ${SHELL_SAMPLE_LOG}
+
+#  Use this type comment to description a error.
+#+ Replacing line 7, above, with
+#+   cat > $Newfile <<End-of-message
+#+       ^^^^^^^^^^
+#+ writes the output to the file $Newfile, rather than to stdout.
+
+#  TODOs should include string TODo in all caps, followed by your username in parentheses. A colon(:) is optional.
+#+ It's preferable to put a bug/ticket number next to the TODo item as well.
+#+ TODO(cnetwork) : Handle the unlikely edege case (bug ####)
+
+# Maximum line length is 80 characters. if more than 80, use "here document" or an embedded newline if possible.
+cat <<-delimiter
+  Here is the Document.
+  A here document is a Special-purpose code block.
+  It uses a form of I/O redirection to feed a command
+  list to an interactive program or a command,
+  such as ftp, cat or the ex text editor.
+  http://tldp.org/LDP/abs/html/here-docs.html
+delimiter
+
+#  Embedded newlines are ok too
+long_string="I am an exceptionally
+  long string."
+echo ${long_string} | tee ${SHELL_SAMPLE_LOG}
+
+#  Pipelines should be split one per line if they don't all fit on one line.
+ifconfig | grep "inet"
+
+#  If not, it should be split at one pipe segment per line with the pipe on the newline
+#+ and a 2 space indent for the next section of the pipe. This applies to a chain of
+#+ commands combined with '|' as wel as to logical compounds using '||' and '&&'.
+ifconfig \
+  | grep "inet" \
+  | grep -v "inet6" \
+  | awk '{print "Local ip is : "$2}' \
+  | tee ${SHELL_SAMPLE_LOG}
+
+#  Loops put ; do and ; then on the same line as the while, for or if.
+#+ for   ; do   done
+#+ if    ; then fi
+#+ while ; do   done
+file_list=`ls -al ./ | awk '{print $9}'`
+for dir_file in ${file_list}; do
+    echo "current directory contain : "${dir_file} | tee ${SHELL_SAMPLE_LOG}
 done
-echo $i
+
+#  循环 lt 是小于的意思
+while_mark=0
+while [ ${while_mark} -lt 1000 ] ; do
+    ((while_mark++))
+done
+echo "loop \$while_mark -lt 1000 result : "${while_mark} | tee ${SHELL_SAMPLE_LOG}
+
+#  Case statement
+#+ case word in [ [(] pattern [| pattern]…) command-list ;;]… esac
+#+ 1. Indent alternatives by 2 spaces.
+#+ 2. A one-line needs a space after the close parenthesis ) of the pattern and before ;;
+#+ 3. Long or multi-command alternatives should be split over multiple lines with pattern
+#++ actions, and ;; on the separate lines.
+#+ https://www.gnu.org/software/bash/manual/html_node/Conditional-Constructs.html
+echo -n "Enter the name of an animal: "
+read ANIMAL
+echo -n "The ${ANIMAL} has "
+case "$ANIMAL" in
+  horse | dog | cat)  echo -n "four" ;;
+  man | kangaroo )
+    echo -n "two"
+    another_command "${actions}" "${other_expr}" ...
+    ;;
+  *)
+    error "Unexpected expression '${expression}'"
+    ;;
+esac
+echo " legs"
+
+#  Section of recommanded variable expansion cases.
+#+ 1. Stay consistent with what you find for existing code
+#+ 2. Quote variables (Single character is special, if no confusion, don't brace-quote it)
+#+ 3. Prefer brace-quoting all other variables.
+
+echo "Specials: !=$!, -=$-, _=$_. ?=$?, #=$# *=$* @=$@ \$=$$ ..." \
+  | tee -a ${SHELL_SAMPLE_LOG}
+
+# Braces necessary
+echo "many parameters: ${10}"
+
+# Braces avoiding confusion:
+# Out put is "a0b0c0"
+set -- a b c
+echo "${1}0${2}0${3}0"
+
+# Preferred sytle for other variables:
+echo "PATH=${PATH}, PWD=${PWD}, mine=${some_var}"
+
+
+#  Quoting
+#+ Always quoting strings containing variables, command substitutions, spaces or shell
+#++ meta characters, unless careful unquoted expansion is required.
+#+ Prefer quoting strings that are "words" (as opposed to command options or path names)
+#+ Never quote literal integers.
+#+ Be aware of quoting rules for pattern matches in [[.
+#+ Use "$@" unless you have a specific reason to use $*.
+
+# 'Single' quote indicate that no substitution is desired.
+# "Double" quote indicate that substitution is required/tolerated.
+
+# "quote command substitutions"
+flas="$(some_command and its args "$@" 'quoted sparately')"
+
+# "quote variables"
+echo "${flag}"
+
+# "never quote literal integers"
+value=32
+
+# "quote command substitutions", even when you expect integers
+number="$(generate_number)"
+
+# "prefer quoting words", not compulsory(不强制)
+readonly USE_INTEGER='true'
+
+# "quote shell meta characters"
+echo 'Hello stranger, and well met. Earn lots of $$$'
+echo "Process $$: Done making \$\$\$."
+
+# Don't quote command option or path names
+# grep -li Hugo /dev/null "$1"
+
+# "quote variables, unless proven false": ccs might be empty
+# grep -cP '([sS]pecial\|?characters*)$' ${1:+"$1"}
+
+# Features and Bugs
+
+# Use $(command) instead of backticks(撇号`).
+var=$(echo "$(echo "666")")
+
+# Test, [ and [[, [[ ... ]] is preferred over [. test and /usr/bin[.
+if [[ 'filename' =~ ^[[:alnum:]]+name ]]; then
+  echo "Match"
+fi
+
+# This matches the exact pattern "f*" (Does not match in this case)
+# If use regex pattern, do not use quote
+if [[ 'filename' =~ "f.*" ]]; then
+  echo 'Match f.*'
+fi
+
+# Not quote or use no quote variable
+regex="f.*"
+if [[ 'filename' =~ $regex ]]; then
+  echo 'Match f.*'
+fi
+
+#  Testing Strings
+#+ Bash is mart enough to deal with an emtpy string in a test. So, given that code is
+#+ much easier to read.
+
+# Use this type to test oridinary string and empty string
+if [[ "$i" = "some_string" ]]; then
+  echo "do_something"
+fi
+
+# Do not use a test string with an x behind.
+if [[ -z "${my_var}" ]]; then
+  echo "is empty"
+fi
+
+if [[ ! -n "${my_var}" ]]; then
+  echo "is empty"
+fi
+
+#  Use an explicit path when doing wildcard expansion of filenames.
+#+ It's a lot safer to expand wildcards with ./* instead of *.
+
+#  Eval should be avoided.
+#+ Didn't know what will eval set and will it succeed.
+#+ What happens if one of the returned values has a space in it?
+# variable="$(eval some_function)"
+
+# Naming Conventions
+# Function names is lower-case, with underscores to separate words.
+# The keyword function is optional, but must be used consistently throughout a project.
+my_func() {
+  echo "my_func"
+}
+
+#  Constants and environment variable names should be all caps, separate with underscores.
+#+ Declared at the top of the file.
+
+# Constant
+readonly PATH_TO_FILES='/some/path'
+# Both constant and environment
+declare -xr ORACLE_SID="PROD"
+
+# Source filename is same as function name, lowercase with underscores to separate.
+# maketemplate or make_template not make-template
+
+# Use readonly or declare -r to ensure read-only variables.
+zip_version="$(dpkg --status zip | grep Version: | cut -d ' ' -f 2)"
+if [[ -z "${zip_version}" ]]; then
+  error_message
+else
+  readonly zip_version
+fi
+
+
 
 # 求幂运算
 let i=i**2
@@ -80,10 +310,10 @@ echo "-------------------------a------------------------"
 echo ""
 
 # 统计出现频率最高的10个单词
-#curl  -o ./other_sample/newcomments "https://news.ycombinator.com/newcomments" 
+#curl  -o ./other_sample/newcomments "https://news.ycombinator.com/newcomments"
 # mac中 sed换行符与普通操作系统不一致，用了 \'$'\n''的形式
 # grep -v ^$ 是选择开头不为空的行, ^在shell中意味着开始，$是结尾
-# uniq -c 是统计频次  sort -n 是按数字排序 -k 是第几列（field）-r 是逆向输出 reverse, 这样最大的在最前面 
+# uniq -c 是统计频次  sort -n 是按数字排序 -k 是第几列（field）-r 是逆向输出 reverse, 这样最大的在最前面
 cat ./other_sample/newcomments | sed -e 's/[^a-zA-Z]/\'$'\n''/g' | grep -v ^$ | sort | uniq -c | sort -n -k 1 -r | head -10
 
 if !(true && true) || false; then
@@ -120,7 +350,7 @@ if test -e ./other_sample/bbb; then echo "YES"; else echo "NO"; fi
 str="test"
 if [ "$str" = "test" ]; then
     echo "YES";
-else 
+else
     echo "NO";
 fi
 
@@ -134,7 +364,7 @@ echo $ic | grep -q "^[0-9a-zA-Z]\+$" && echo "success"
 echo "test2018@cnetwork.com" | grep -q "[0-9a-zA-Z\.]*@[0-9a-zA-Z\.]*"
 echo $?
 
-echo "http://news.lzu.edu.cn/article.jsp?newsid=10135" | grep -q "^http://[a-z0-9A-Z\./=?]\+$" 
+echo "http://news.lzu.edu.cn/article.jsp?newsid=10135" | grep -q "^http://[a-z0-9A-Z\./=?]\+$"
 echo $?
 
 # /dev/null 与 /dev/zero 是两个垃圾桶，后者还可以一直取到0，知道退出
@@ -148,12 +378,12 @@ echo ${var}
 echo ${#var}
 #expr length "$var"
 #echo $var | awk '{printf("%d\n", length($0));}'
-echo -n $var | wc -c 
-echo -n $var | wc -c 
+echo -n $var | wc -c
+echo -n $var | wc -c
 
 # 这个地方有点问题，统计特定单词个数
 echo $var | wc -w
-echo -n $var | sed -e 's/[^g]//g' | wc -c 
+echo -n $var | sed -e 's/[^g]//g' | wc -c
 echo -n $var | sed -e 's/[^gt]//g' | wc -c
 echo -n $var | tr -cd g | wc -c
 
@@ -186,7 +416,7 @@ echo ${#var_arr[@]}
 # 数组还提供了类似的数组功能，对于空格分割的字符串, 不要用sh 启动脚本要用bash启动脚本,否则echo -n 不工作
 for i in $var;
 do
-   echo -n  $i"_"; 
+   echo -n  $i"_";
 done
 
 # 可以使用awk进行处理，使用split将数组放在var_arr中,
@@ -337,9 +567,9 @@ find ./ -name "*.sh" -o -name "*.txt"
 #toupper.sh是一个转大写为小写的文件
 
 # 查看进程属性和状态
-ps -ef
+# ps -ef
 # 选择某个特定用户启动的进程
-ps -U cnetwork
+# ps -U cnetwork
 # 使用Ps, pstree, top动态查看进程信息
 # linux排查网络问题需要检查各个层次：物理链接、链路层、网络层直到应用层可以用一下工具
 # ethereal/tcpdump, hping, nmap, netstat, netpipe, netperf, nvstat, ntop
