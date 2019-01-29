@@ -335,6 +335,25 @@ sh deploy_docker.sh
 python checkdoc.py [id]
 ```
 
+-----
+## 014 Intellij 常用快捷模板
+事项         | 备注           |
+--------------------|------------------|
+脚本语言     |text |
+适用系统 | IntelliJ IDEA|
+推荐使用场景  | 所有场景|
+注意事项     | 图个省劲 |
+### 1.1 为什么写
+
+   IntelliJ 中经常需要编写一些重复的代码，比如单例声明，比如类首注释，太麻烦了，写了几个模板用起来
+
+### 1.2 使用实例
+![live_template](picture/014_live_templates.png)
+
+```
+# 放在类首时候使用 cinfo，瞬间创建完毕类首注释
+# 放在类里时候使用 csingleton, 瞬间创建完毕单例
+```
 
 
 -----
